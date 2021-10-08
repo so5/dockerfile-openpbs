@@ -30,6 +30,7 @@ RUN ssh-keygen -A && mkdir -p /run/sshd && rm -rf /run/nologin
 
 # add non-root user
 RUN useradd -m testuser && echo "testuser:passw0rd" | chpasswd
+RUN mkdir -p /home/testuser/.ssh && chmod 755 /home/testuser/.ssh
 
 ADD ./entrypoint.sh /
 ENTRYPOINT ["bash", "entrypoint.sh"]
