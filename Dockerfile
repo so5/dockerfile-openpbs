@@ -27,7 +27,7 @@ RUN apt-get update &&\
     DEBIAN_FRONTEND=noninteractive apt install -y \
       expat libedit2 postgresql python3 postgresql-contrib sendmail-bin \
       sudo tcl tk libical3 postgresql-server-dev-all\
-      openssh-server openssh-client openssh-sftp-server
+      openssh-server openssh-client openssh-sftp-server rsync
 
 # setup ssh-server
 RUN ssh-keygen -A && mkdir -p /run/sshd && rm -rf /run/nologin
